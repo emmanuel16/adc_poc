@@ -1,0 +1,31 @@
+{
+    "gatewayApp": {
+        "auditChecklist" : {
+            "home": {
+                "title": "AuditChecklists",
+                "createLabel": "Créer un nouveau Audit Checklist",
+                "createOrEditLabel": "Créer ou éditer un Audit Checklist",
+                "search": "Recherche pour Audit Checklist"
+            },
+            "created": "Un nouveau Audit Checklist a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Audit Checklist avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Audit Checklist avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Audit Checklist {{ id }} ?"
+            },
+            "detail": {
+                "title": "Audit Checklist"
+            },
+            "publishedChecklistId": "Published Checklist Id",
+            "year": "Year",
+            "data": "Data",
+            "grp": "Grp",
+            "domain": "Domain",
+            "type": "Type",
+            "description": "Description",
+            "modDate": "Mod Date",
+            "lastModBy": "Last Mod By",
+            "clientInfo": "Client Info"
+        }
+    }
+}

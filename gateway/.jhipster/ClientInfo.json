@@ -1,0 +1,23 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "auditChecklist",
+            "otherEntityName": "auditChecklist",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "clientInfo"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160817182352",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "client_info",
+    "pagination": "no",
+    "microserviceName": "audit_checklist",
+    "searchEngine": "elasticsearch"
+}

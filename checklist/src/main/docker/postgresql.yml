@@ -1,0 +1,12 @@
+version: '2'
+services:
+    checklist-postgresql:
+        container_name: checklist-postgresql
+        image: postgres:9.5.3
+        # volumes:
+        #     - ~/volumes/jhipster/checklist/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=checklist
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

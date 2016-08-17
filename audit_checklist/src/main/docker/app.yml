@@ -1,0 +1,26 @@
+version: '2'
+services:
+    audit_checklist-app:
+        image: audit_checklist
+        external_links:
+            - audit_checklist-postgresql:postgresql
+            - audit_checklist-elasticsearch:elasticsearch
+            - jhipster-registry:registry
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_CLOUD_CONFIG_URI=http://admin:admin@registry:8761/config
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/audit_checklist
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=elasticsearch:9300
+    audit_checklist-postgresql:
+        extends:
+            file: postgresql.yml
+            service: audit_checklist-postgresql
+    audit_checklist-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: audit_checklist-elasticsearch
+    jhipster-registry:
+        extends:
+            file: jhipster-registry.yml
+            service: jhipster-registry

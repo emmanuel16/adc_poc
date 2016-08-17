@@ -1,0 +1,59 @@
+
+<div>
+    <h2><span translate="gatewayApp.auditChecklist.detail.title">Audit Checklist</span> {{vm.auditChecklist.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="gatewayApp.auditChecklist.publishedChecklistId">Published Checklist Id</span></dt>
+        <dd>
+            <span>{{vm.auditChecklist.publishedChecklistId}}</span>
+        </dd>
+        <dt><span translate="gatewayApp.auditChecklist.year">Year</span></dt>
+        <dd>
+            <span>{{vm.auditChecklist.year}}</span>
+        </dd>
+        <dt><span translate="gatewayApp.auditChecklist.data">Data</span></dt>
+        <dd>
+            <span>{{vm.auditChecklist.data}}</span>
+        </dd>
+        <dt><span translate="gatewayApp.auditChecklist.grp">Grp</span></dt>
+        <dd>
+            <span>{{vm.auditChecklist.grp}}</span>
+        </dd>
+        <dt><span translate="gatewayApp.auditChecklist.domain">Domain</span></dt>
+        <dd>
+            <span>{{vm.auditChecklist.domain}}</span>
+        </dd>
+        <dt><span translate="gatewayApp.auditChecklist.type">Type</span></dt>
+        <dd>
+            <span>{{vm.auditChecklist.type}}</span>
+        </dd>
+        <dt><span translate="gatewayApp.auditChecklist.description">Description</span></dt>
+        <dd>
+            <span>{{vm.auditChecklist.description}}</span>
+        </dd>
+        <dt><span translate="gatewayApp.auditChecklist.modDate">Mod Date</span></dt>
+        <dd>
+            <span>{{vm.auditChecklist.modDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span translate="gatewayApp.auditChecklist.lastModBy">Last Mod By</span></dt>
+        <dd>
+            <span>{{vm.auditChecklist.lastModBy}}</span>
+        </dd>
+        <dt><span translate="gatewayApp.auditChecklist.clientInfo">Client Info</span></dt>
+        <dd>
+            <a ui-sref="client-info-detail({id:vm.auditChecklist.clientInfo.id})">{{vm.auditChecklist.clientInfo.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="audit-checklist-detail.edit({id:vm.auditChecklist.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

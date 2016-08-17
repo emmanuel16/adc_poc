@@ -1,0 +1,56 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "clientInfo",
+            "otherEntityName": "clientInfo",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "publishedChecklistId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "year",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "data",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "grp",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "domain",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "modDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "lastModBy",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160817182137",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "audit_checklist",
+    "pagination": "no",
+    "microserviceName": "audit_checklist",
+    "searchEngine": "elasticsearch"
+}

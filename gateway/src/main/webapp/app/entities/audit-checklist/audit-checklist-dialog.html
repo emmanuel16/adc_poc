@@ -1,0 +1,89 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myAuditChecklistLabel" translate="gatewayApp.auditChecklist.home.createOrEditLabel">Create or edit a Audit Checklist</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.auditChecklist.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.auditChecklist.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gatewayApp.auditChecklist.publishedChecklistId" for="field_publishedChecklistId">Published Checklist Id</label>
+            <input type="text" class="form-control" name="publishedChecklistId" id="field_publishedChecklistId"
+                    ng-model="vm.auditChecklist.publishedChecklistId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gatewayApp.auditChecklist.year" for="field_year">Year</label>
+            <input type="number" class="form-control" name="year" id="field_year"
+                    ng-model="vm.auditChecklist.year"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gatewayApp.auditChecklist.data" for="field_data">Data</label>
+                <textarea class="form-control" name="data" id="field_data"
+                    ng-model="vm.auditChecklist.data"  />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gatewayApp.auditChecklist.grp" for="field_grp">Grp</label>
+            <input type="text" class="form-control" name="grp" id="field_grp"
+                    ng-model="vm.auditChecklist.grp"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gatewayApp.auditChecklist.domain" for="field_domain">Domain</label>
+            <input type="text" class="form-control" name="domain" id="field_domain"
+                    ng-model="vm.auditChecklist.domain"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gatewayApp.auditChecklist.type" for="field_type">Type</label>
+            <input type="text" class="form-control" name="type" id="field_type"
+                    ng-model="vm.auditChecklist.type"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gatewayApp.auditChecklist.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.auditChecklist.description"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gatewayApp.auditChecklist.modDate" for="field_modDate">Mod Date</label>
+                <div class="input-group">
+                    <input id="field_modDate" type="text" class="form-control" name="modDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.auditChecklist.modDate" is-open="vm.datePickerOpenStatus.modDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('modDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gatewayApp.auditChecklist.lastModBy" for="field_lastModBy">Last Mod By</label>
+            <input type="text" class="form-control" name="lastModBy" id="field_lastModBy"
+                    ng-model="vm.auditChecklist.lastModBy"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="gatewayApp.auditChecklist.clientInfo" for="field_clientInfo">Client Info</label>
+            <select class="form-control" id="field_clientInfo" name="clientInfo" ng-model="vm.auditChecklist.clientInfo" ng-options="clientInfo as clientInfo.id for clientInfo in vm.clientinfos track by clientInfo.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

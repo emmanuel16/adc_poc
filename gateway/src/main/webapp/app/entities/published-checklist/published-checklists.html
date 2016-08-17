@@ -1,0 +1,93 @@
+<div>
+    <h2 translate="gatewayApp.publishedChecklist.home.title">Published Checklists</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="published-checklist.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  translate="gatewayApp.publishedChecklist.home.createLabel">
+                        Create new Published Checklist
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'gatewayApp.publishedChecklist.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="gatewayApp.publishedChecklist.year">Year</span></th>
+                    <th><span translate="gatewayApp.publishedChecklist.data">Data</span></th>
+                    <th><span translate="gatewayApp.publishedChecklist.grp">Grp</span></th>
+                    <th><span translate="gatewayApp.publishedChecklist.domain">Domain</span></th>
+                    <th><span translate="gatewayApp.publishedChecklist.type">Type</span></th>
+                    <th><span translate="gatewayApp.publishedChecklist.description">Description</span></th>
+                    <th><span translate="gatewayApp.publishedChecklist.current">Current</span></th>
+                    <th><span translate="gatewayApp.publishedChecklist.active">Active</span></th>
+                    <th><span translate="gatewayApp.publishedChecklist.publisedDate">Publised Date</span></th>
+                    <th><span translate="gatewayApp.publishedChecklist.checklist">Checklist</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="publishedChecklist in vm.publishedChecklists track by publishedChecklist.id">
+                    <td><a ui-sref="published-checklist-detail({id:publishedChecklist.id})">{{publishedChecklist.id}}</a></td>
+                    <td>{{publishedChecklist.year}}</td>
+                    <td>{{publishedChecklist.data}}</td>
+                    <td>{{publishedChecklist.grp}}</td>
+                    <td>{{publishedChecklist.domain}}</td>
+                    <td>{{publishedChecklist.type}}</td>
+                    <td>{{publishedChecklist.description}}</td>
+                    <td>{{publishedChecklist.current}}</td>
+                    <td>{{publishedChecklist.active}}</td>
+                        <td>{{publishedChecklist.publisedDate | date:'mediumDate'}}</td>
+                    <td>
+                        <a ui-sref="checklist-detail({id:publishedChecklist.checklist.id})">{{publishedChecklist.checklist.type}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="published-checklist-detail({id:publishedChecklist.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="published-checklist.edit({id:publishedChecklist.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="published-checklist.delete({id:publishedChecklist.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

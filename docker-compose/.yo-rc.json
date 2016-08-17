@@ -1,0 +1,13 @@
+{
+  "generator-jhipster": {
+    "appsFolders": [
+      "audit_checklist",
+      "checklist",
+      "gateway"
+    ],
+    "directoryPath": "../",
+    "useElk": true,
+    "adminPassword": "admin",
+    "jwtSecretKey": "399daad37db0f4c76492e398aa0856d892c04399"
+  }
+}

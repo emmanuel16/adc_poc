@@ -1,0 +1,23 @@
+{
+    "gatewayApp": {
+        "clientInfo" : {
+            "home": {
+                "title": "ClientInfos",
+                "createLabel": "Créer un nouveau Client Info",
+                "createOrEditLabel": "Créer ou éditer un Client Info",
+                "search": "Recherche pour Client Info"
+            },
+            "created": "Un nouveau Client Info a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Client Info avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Client Info avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Client Info {{ id }} ?"
+            },
+            "detail": {
+                "title": "Client Info"
+            },
+            "name": "Name",
+            "auditChecklist": "Audit Checklist"
+        }
+    }
+}

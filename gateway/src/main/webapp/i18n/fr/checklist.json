@@ -1,0 +1,28 @@
+{
+    "gatewayApp": {
+        "checklist" : {
+            "home": {
+                "title": "Checklists",
+                "createLabel": "Créer un nouveau Checklist",
+                "createOrEditLabel": "Créer ou éditer un Checklist",
+                "search": "Recherche pour Checklist"
+            },
+            "created": "Un nouveau Checklist a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Checklist avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Checklist avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Checklist {{ id }} ?"
+            },
+            "detail": {
+                "title": "Checklist"
+            },
+            "year": "Year",
+            "type": "Type",
+            "data": "Data",
+            "domain": "Domain",
+            "grp": "Grp",
+            "description": "Description",
+            "publishedChecklist": "Published Checklist"
+        }
+    }
+}

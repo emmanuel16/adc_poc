@@ -1,0 +1,59 @@
+
+<div>
+    <h2><span translate="gatewayApp.publishedChecklist.detail.title">Published Checklist</span> {{vm.publishedChecklist.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="gatewayApp.publishedChecklist.year">Year</span></dt>
+        <dd>
+            <span>{{vm.publishedChecklist.year}}</span>
+        </dd>
+        <dt><span translate="gatewayApp.publishedChecklist.data">Data</span></dt>
+        <dd>
+            <span>{{vm.publishedChecklist.data}}</span>
+        </dd>
+        <dt><span translate="gatewayApp.publishedChecklist.grp">Grp</span></dt>
+        <dd>
+            <span>{{vm.publishedChecklist.grp}}</span>
+        </dd>
+        <dt><span translate="gatewayApp.publishedChecklist.domain">Domain</span></dt>
+        <dd>
+            <span>{{vm.publishedChecklist.domain}}</span>
+        </dd>
+        <dt><span translate="gatewayApp.publishedChecklist.type">Type</span></dt>
+        <dd>
+            <span>{{vm.publishedChecklist.type}}</span>
+        </dd>
+        <dt><span translate="gatewayApp.publishedChecklist.description">Description</span></dt>
+        <dd>
+            <span>{{vm.publishedChecklist.description}}</span>
+        </dd>
+        <dt><span translate="gatewayApp.publishedChecklist.current">Current</span></dt>
+        <dd>
+            <span>{{vm.publishedChecklist.current}}</span>
+        </dd>
+        <dt><span translate="gatewayApp.publishedChecklist.active">Active</span></dt>
+        <dd>
+            <span>{{vm.publishedChecklist.active}}</span>
+        </dd>
+        <dt><span translate="gatewayApp.publishedChecklist.publisedDate">Publised Date</span></dt>
+        <dd>
+            <span>{{vm.publishedChecklist.publisedDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span translate="gatewayApp.publishedChecklist.checklist">Checklist</span></dt>
+        <dd>
+            <a ui-sref="checklist-detail({id:vm.publishedChecklist.checklist.id})">{{vm.publishedChecklist.checklist.type}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="published-checklist-detail.edit({id:vm.publishedChecklist.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

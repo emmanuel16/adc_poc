@@ -1,0 +1,61 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myChecklistLabel" translate="gatewayApp.checklist.home.createOrEditLabel">Create or edit a Checklist</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.checklist.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.checklist.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gatewayApp.checklist.year" for="field_year">Year</label>
+            <input type="number" class="form-control" name="year" id="field_year"
+                    ng-model="vm.checklist.year"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gatewayApp.checklist.type" for="field_type">Type</label>
+            <input type="text" class="form-control" name="type" id="field_type"
+                    ng-model="vm.checklist.type"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gatewayApp.checklist.data" for="field_data">Data</label>
+                <textarea class="form-control" name="data" id="field_data"
+                    ng-model="vm.checklist.data"  />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gatewayApp.checklist.domain" for="field_domain">Domain</label>
+            <input type="text" class="form-control" name="domain" id="field_domain"
+                    ng-model="vm.checklist.domain"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gatewayApp.checklist.grp" for="field_grp">Grp</label>
+            <input type="text" class="form-control" name="grp" id="field_grp"
+                    ng-model="vm.checklist.grp"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gatewayApp.checklist.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.checklist.description"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

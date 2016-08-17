@@ -1,0 +1,10 @@
+version: '2'
+services:
+    audit_checklist-elasticsearch:
+        container_name: audit_checklist-elasticsearch
+        image: elasticsearch:1.7.5
+        # volumes:
+        #     - ~/volumes/jhipster/audit_checklist/elasticsearch/:/usr/share/elasticsearch/data/
+        ports:
+            - 9200:9200
+            - 9300:9300

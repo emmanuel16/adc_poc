@@ -1,0 +1,93 @@
+<div>
+    <h2 translate="gatewayApp.auditChecklist.home.title">Audit Checklists</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="audit-checklist.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  translate="gatewayApp.auditChecklist.home.createLabel">
+                        Create new Audit Checklist
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'gatewayApp.auditChecklist.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="gatewayApp.auditChecklist.publishedChecklistId">Published Checklist Id</span></th>
+                    <th><span translate="gatewayApp.auditChecklist.year">Year</span></th>
+                    <th><span translate="gatewayApp.auditChecklist.data">Data</span></th>
+                    <th><span translate="gatewayApp.auditChecklist.grp">Grp</span></th>
+                    <th><span translate="gatewayApp.auditChecklist.domain">Domain</span></th>
+                    <th><span translate="gatewayApp.auditChecklist.type">Type</span></th>
+                    <th><span translate="gatewayApp.auditChecklist.description">Description</span></th>
+                    <th><span translate="gatewayApp.auditChecklist.modDate">Mod Date</span></th>
+                    <th><span translate="gatewayApp.auditChecklist.lastModBy">Last Mod By</span></th>
+                    <th><span translate="gatewayApp.auditChecklist.clientInfo">Client Info</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="auditChecklist in vm.auditChecklists track by auditChecklist.id">
+                    <td><a ui-sref="audit-checklist-detail({id:auditChecklist.id})">{{auditChecklist.id}}</a></td>
+                    <td>{{auditChecklist.publishedChecklistId}}</td>
+                    <td>{{auditChecklist.year}}</td>
+                    <td>{{auditChecklist.data}}</td>
+                    <td>{{auditChecklist.grp}}</td>
+                    <td>{{auditChecklist.domain}}</td>
+                    <td>{{auditChecklist.type}}</td>
+                    <td>{{auditChecklist.description}}</td>
+                        <td>{{auditChecklist.modDate | date:'mediumDate'}}</td>
+                    <td>{{auditChecklist.lastModBy}}</td>
+                    <td>
+                        <a ui-sref="client-info-detail({id:auditChecklist.clientInfo.id})">{{auditChecklist.clientInfo.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="audit-checklist-detail({id:auditChecklist.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="audit-checklist.edit({id:auditChecklist.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="audit-checklist.delete({id:auditChecklist.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "publishedChecklist",
+            "otherEntityName": "publishedChecklist",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "checklist"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "year",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "data",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "domain",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "grp",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160817180919",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "checklist",
+    "pagination": "no",
+    "microserviceName": "checklist",
+    "searchEngine": "elasticsearch"
+}

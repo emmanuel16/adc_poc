@@ -1,0 +1,31 @@
+{
+    "gatewayApp": {
+        "auditChecklist" : {
+            "home": {
+                "title": "Audit Checklists",
+                "createLabel": "Create a new Audit Checklist",
+                "createOrEditLabel": "Create or edit a Audit Checklist",
+                "search": "Search for Audit Checklist"
+            },
+            "created": "A new Audit Checklist is created with identifier {{ param }}",
+            "updated": "A Audit Checklist is updated with identifier {{ param }}",
+            "deleted": "A Audit Checklist is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Audit Checklist {{ id }}?"
+            },
+            "detail": {
+                "title": "Audit Checklist"
+            },
+            "publishedChecklistId": "Published Checklist Id",
+            "year": "Year",
+            "data": "Data",
+            "grp": "Grp",
+            "domain": "Domain",
+            "type": "Type",
+            "description": "Description",
+            "modDate": "Mod Date",
+            "lastModBy": "Last Mod By",
+            "clientInfo": "Client Info"
+        }
+    }
+}

@@ -1,0 +1,83 @@
+<div>
+    <h2 translate="gatewayApp.checklist.home.title">Checklists</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="checklist.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  translate="gatewayApp.checklist.home.createLabel">
+                        Create new Checklist
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'gatewayApp.checklist.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="gatewayApp.checklist.year">Year</span></th>
+                    <th><span translate="gatewayApp.checklist.type">Type</span></th>
+                    <th><span translate="gatewayApp.checklist.data">Data</span></th>
+                    <th><span translate="gatewayApp.checklist.domain">Domain</span></th>
+                    <th><span translate="gatewayApp.checklist.grp">Grp</span></th>
+                    <th><span translate="gatewayApp.checklist.description">Description</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="checklist in vm.checklists track by checklist.id">
+                    <td><a ui-sref="checklist-detail({id:checklist.id})">{{checklist.id}}</a></td>
+                    <td>{{checklist.year}}</td>
+                    <td>{{checklist.type}}</td>
+                    <td>{{checklist.data}}</td>
+                    <td>{{checklist.domain}}</td>
+                    <td>{{checklist.grp}}</td>
+                    <td>{{checklist.description}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="checklist-detail({id:checklist.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="checklist.edit({id:checklist.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="checklist.delete({id:checklist.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
